@@ -1,0 +1,207 @@
+type casting in java:
+````
+
+casting at primitive level
+casting at reference level:
+
+8 datatypes
+
+
+
+In java, type casting is a method or process that converts a datatype
+into another datatype in both ways manually and automatically.
+
+
+manual conversion - programmer
+automatic conversion - java compiler
+
+
+two types of type casting:
+
+  -widening type casting
+  -narrowing type casting
+  
+  
+-converting a lower datatype into a higher datatype is called widening
+type casting.
+
+-implicit conversion or casting down.
+
+-it is done automcatically.
+
+  it takes place  when
+  
+ -both datatypes must be compatible with each other
+ -the target type must be larger than the source type.
+ 
+ 
+ byte -> short -> char -> int -> long -> float -> double
+ 
+ 
+ byte b = 33;
+ short s = b;
+ 
+ char c = b;
+ 
+ ->the conversion between numeric datatype to char or boolean is not done
+   automatically.
+   
+   char and boolean datatypes are also not compatible with each other.
+   
+   
+example for widening type casting:
+```````
+package com.capg.jse.casting;
+
+public class Test1 {
+	
+	public static void main(String[] args) {
+		
+		
+		int x = 7;
+		
+		//automatically converts the integer type into long type
+		long y = x;
+		
+		//automatically converts the long type into float type
+
+		float z = y;
+		
+		
+		System.out.println("before conversion int value: " + x);
+		System.out.println("after conversion long value: " + y);
+		System.out.println("after conversion float value: " + z);
+	}
+
+}
+
+Narrowing type casting:
+```
+converting a higher daattype into a lower datatype.
+
+-explicit conversion or casting up
+
+-it is done manually by the programmers.
+
+
+if we do not perform narrowing type casting will get compile time errors.
+
+  double -> float -> long -> int -> char -> short -> byte
+  
+
+example:
+```
+package com.capg.jse.casting;
+
+public class Test2 {
+	
+	public static void main(String[] args) {
+		
+		double d = 1656.434;
+		
+		//converting double datatype into long datatype
+		long l =(long)d;
+		
+		//converting long datatype into int datatype
+		
+		int i = (int)l;
+		
+		System.out.println("before conversin double value: " + d);
+		System.out.println("after conversion into long type: " + l);
+		System.out.println("after conversion into int type: " + i);
+	}
+
+}
+
+
+ example:
+ ``
+ package com.capg.jse.casting;
+
+public class Test3 {
+	
+	public static void main(String[] args) {
+		
+		
+		byte b = 120;
+		char c = (char)b;
+		
+		System.out.println(c);
+		
+		
+		byte d = (byte)c;
+		System.out.println(d);
+		
+	}
+
+}
+
+
+process of converting one datatype to another datatype is known as
+type casting.
+
+
+upcasting and downcasting is the type of object typecasting.
+
+parent to child --> downcasting
+
+child to parent --> upcasting
+
+
+example:
+``
+//upcasting
+package com.capg.jse.casting;
+
+
+class Parent
+{
+	 void printData()
+	 {
+		 System.out.println("method of parent class");
+	 }
+	
+}
+
+class Child  extends Parent
+{
+	 void printData()
+	 {
+		 System.out.println("method of child class");
+	 }
+	
+}
+//execution logic class
+public class Test4 {
+	 public static void main(String[] args) {
+		
+		
+		 Parent p = new Parent();
+		 Child c = new Child();
+		 
+		 //converting child object to parent object - upcasting
+		 Parent p1=new Child();
+		 
+		 p1.printData();
+		 
+		 //converting parent object to child object - downcasting (manually by the programmer)
+		 Child c1=(Child)new Parent();
+		 
+		 c1.printData();
+	
+		 /*
+		 Integer x = 100;
+		 //upcasting
+		 
+		 Object y = x;
+		 //downcasting
+		 Integer z = (Integer)y;
+		 */
+	
+		 
+		 
+		 
+		 
+	}
+
+}
