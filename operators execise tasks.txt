@@ -1,0 +1,14 @@
+Exercise 1: Arithmetic Operators
+Write a Java program that calculates and prints the result of the following arithmetic operations:
+
+Addition
+Subtraction
+Multiplication
+Division
+Modulus
+Exercise 2: Comparison Operators
+Write a Java program that compares two integers and prints whether they are equal, not equal, greater than, less than, greater than or equal to, and less than or equal to.
+Exercise 3: Logical Operators
+Write a Java program that uses logical operators to determine if a given number is within a specified range (between 10 and 20, inclusive).
+Exercise 4: Ternary Operator
+Write a Java program that uses the ternary operator to determine if a given number is even or odd and prints the result.
