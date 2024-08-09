@@ -1,0 +1,122 @@
+```
+example:
+```
+
+public class Test9 {
+
+	public static void main(String[] args) {
+
+		int x = Integer.parseInt(args[0]);
+		int y = Integer.parseInt(args[1]);
+		int z = x+y;
+		System.out.println("sum of two numbers is " + z);
+	}
+}
+
+
+
+from above example, Integer is the pre-defined class available in java.lang
+package 
+
+in this class we do have parseInt(String) which accepts string as an 
+argument and returns integer.
+
+Since parseInt() is a static while we are calling we have to call w.r.to
+class name i.e Integer.
+
+
+         ->int returnvalue = Integer.parseInt(323);
+		 
+
+
+
+byte   ->Byte  -> parseByte(String)(String --> byte)
+short  ->Short -> parseShort(String)(String -->short)
+int    ->Integer
+long   ->Long
+float  ->Float
+double -> Double
+char   ->Character
+boolean ->Boolean
+
+
+
+these classes are known wrapper classes.
+
+->wrapper classes are the classes for the purpose of converting 
+String type to corresponding datatypes and viceversa.
+
+->write a java program for calculating annaual income of the employee salary?
+
+        ->salary of the employee --> 2000
+		  no.of months in the year --> 12
+          annual income of the salary --> 24000
+		  
+		  
+		  
+program:
+```
+
+public class Test9 {
+
+	public static void main(String[] args) {
+
+		float salary = Float.parseFloat(args[0]);
+		
+		float noOfMonths = Float.parseFloat(args[1]);
+		
+		float annualSalary = salary * noOfMonths;
+		
+		System.out.println("annual salary of an employee is " + annualSalary);
+		
+	}
+}
+
+
+->write a java program which takes two values and displays their product?
+
+public class Test9 {
+
+	public static void main(String[] args) {
+
+		double firstNumber = Double.parseDouble(args[0]);
+		double secondNumber = Double.parseDouble(args[0]);
+		double product = firstNumber * secondNumber;
+		System.out.println("product of given two numbers is " + product);
+
+	}
+}
+
+
+
+write a java program which gives square of the given number?
+
+sample input and output:
+```
+2 --> 4
+10 -->100
+
+
+public class Test9 {
+
+	public static void main(String[] args) {
+
+		
+		  double firstNumber = Double.parseDouble(args[0]);
+		  double square = firstNumber*firstNumber;
+		 
+		  System.out.println("square of given number is " + square);
+
+
+	}
+}
+
+
+assignment:
+```
+do the same program by writing one line logic?
+
+
+note:
+``
+wrapper classes are existed in java for every datatype.

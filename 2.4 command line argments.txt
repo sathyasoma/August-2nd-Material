@@ -1,0 +1,229 @@
+command line arguments:
+````
+
+class Test1
+{
+
+//userdefined instance methods
+ public void m1()
+ {
+ //logic
+ }
+ 
+ public void m2()
+ {
+ //logic
+ }
+ 
+ //predefined static method
+ 
+ publi static void main(String[] args)
+ {
+ 
+
+ }
+}
+   
+
+why main() method is mandatory in every java program?
+
+ ->java execution starts from main()
+ 
+ ->jvm internally calling main()
+ 
+ 
+simple program for addition of two numbers:
+````````
+
+public class Test9 {
+
+	//user defined  instance method
+	public void add(int x, int y) {
+		System.out.println("the sum is " + (x + y));
+	}
+
+	public static void main(String[] args) {
+
+		//static area
+		System.out.println("i am main method");
+		
+		Test9 obj = new Test9();
+	    //call the add()
+		obj.add(20, 30);
+		
+	}
+}
+
+int x = 100;
+
+int x = 100,200;
+
+requirement:
+ i want to store  1 crore values?
+ 
+ 
+only one variable
+
+ storing multiple values inside a single variable.
+ 
+   ->by using Arrays concepts
+   
+   
+   int x[];
+   x=new int{1,2,3,4};
+   
+
+in arrays, values are stored and accessed based on
+index number.
+
+index value starts from 0
+
+
+if size 3 , maximum index is 2
+
+if size is n , maximum index is (n-1)
+
+example:
+`
+
+public class Test9 {
+
+
+	public static void main(String[] args) {
+
+		int x[];//array variable declare
+		x = new int[3];//instantiation
+		
+		//assigning the values 
+		x[0]=100;
+		x[1]=200;
+		x[2]=300;
+	
+		//printing 
+		
+		System.out.println(x[0]);
+		System.out.println(x[1]);
+		System.out.println(x[2]);
+		
+		//using for loop
+		System.out.println("using for loop displaying array elements");
+		for(int i=0;i<3;i++)
+		{
+			System.out.println(x[i]);
+		}
+		
+	}
+}
+
+
+assignment:
+```
+declare one string variable and assign 3 city names
+like hyderabad,pune,chennai and then display those
+values using for loop?
+
+
+program:
+``
+public class Test9 {
+
+
+	public static void main(String[] args) {
+
+		String cityNames[]; //array variable declare
+
+		cityNames=new String[3]; //instantiation
+
+		//assigning the values
+
+		cityNames[0]="hyd";
+		cityNames[1]="pune";
+		cityNames[2]="chennai";
+
+	
+
+		//using for loop
+    
+		for(int i=0;i<3;i++)
+
+		{
+
+		System.out.println(cityNames[i]);
+
+		}
+}
+}
+
+example:
+```
+
+public class Test9 {
+
+
+	public static void main(String[] args) {
+
+		/*
+		 * String cityNames[]; //array variable declare
+		 * 
+		 * cityNames=new String[3]; //instantiation
+		 * 
+		 * //assigning the values
+		 * 
+		 * cityNames[0]="hyd"; cityNames[1]="pune"; cityNames[2]="chennai";
+		 */
+
+		 String cityNames[] = {"hyd","pune","chennai"};
+		 
+		 int x[] = {100,200,300};
+		 
+		 float marks[]= {38.5f,45.6f,24.5f};
+	
+
+		//using for loop
+    
+		for(int i=0;i<3;i++)
+
+		{
+
+		System.out.println(cityNames[i]);
+		System.out.println(x[i]);
+		System.out.println(marks[i]);
+
+		}
+}
+}
+
+
+
+array variable intialization:
+`````
+datatype variablename[] = {value1,value2,value3};
+
+command line arguments:
+```
+the arguments which we are passing to main() , those
+arguments we call it as command line arguments.
+
+
+command line arguemnts are by default String type.
+
+
+while we are executing the program, whatever the values we
+are passing , those values will be submitted to main()
+of String type.
+
+
+
+example:
+``````
+
+public class Test9 {
+
+	public static void main(String[] args) {
+
+		for(int i=0;i<3;i++)
+		{
+			System.out.println(args[i]);
+		}
+	}
+}

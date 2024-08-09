@@ -1,0 +1,74 @@
+day-18:
+```
+operators in java:
+```
+operator in java is a symbol which is used
+to perform operations.
+
++,-,*,/ etc...
+
+we have many types of operators in java.
+
+  -Unary Operator
+  -Arithmetic Operator
+  -Shift Operator
+  -Relational Operator
+  -Bitwise operator
+  -Logical Operator
+  -Ternary Operator
+  -Assignment Operator
+    
+
+-Unary Operator:
+````
+The java unary operators require only one operand
+
+unary operators are used to perform various operations
+
+ -incrementing / decrementing a value by one
+ -negating an expression
+ -inverting the value of a boolean
+ 
+ 
+  postfix  --> expr++, expr--
+  
+  prefix   -->++expr, --expr
+              +expr , -expr 
+
+
+example:
+```
+
+public class Test10 {
+
+	public static void main(String[] args) {
+		int x = 10;
+		
+		System.out.println(x++);//10
+		
+		System.out.println(++x);//12
+		
+		System.out.println(x--);//12
+		
+		System.out.println(--x);//10
+		
+	}
+}
+
+
+example:
+``
+package operators;
+
+public class Test2 {
+	
+	public static void main(String[] args) {
+		
+		int a = 10;
+		int b = 10;
+		System.out.println(a++ + ++a);//22
+		System.out.println(b++ + b++);//10+11=21
+		
+	}
+
+}
