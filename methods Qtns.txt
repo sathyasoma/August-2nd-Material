@@ -1,0 +1,16 @@
+Exercise 1: Convert Temperature from Celsius to Fahrenheit
+Write a Java method that takes a temperature in Celsius as a parameter and returns the equivalent temperature in Fahrenheit.
+Exercise 2: Calculate the Area of a Circle
+Write a Java method that takes the radius of a circle as a parameter and returns the area of the circle.
+Exercise 3: Find the Maximum of Two Numbers
+Write a Java method that takes two integers as parameters and returns the larger of the two.
+Exercise 4: Calculate the Simple Interest
+Write a Java method that takes the principal amount, rate of interest, and time (in years) as parameters and returns the simple interest.
+Exercise 5: Calculate the Perimeter of a Rectangle
+Write a Java method that takes the length and width of a rectangle as parameters and returns the perimeter.
+Exercise 6: Calculate the Average of Three Numbers
+Write a Java method that takes three integers as parameters and returns their average.
+Exercise 7: Convert Minutes to Hours and Minutes
+Write a Java method that takes a number of minutes as a parameter and returns the equivalent time in hours and minutes.
+Exercise 8: Calculate the Volume of a Cylinder
+Write a Java method that takes the radius and height of a cylinder as parameters and returns its volume.
