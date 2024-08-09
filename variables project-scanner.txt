@@ -1,0 +1,19 @@
+
+Create a simple Java program(Grade Calcultor) that accepts input for a student's name, age, and grades in different subjects. The program will calculate the average grade and determine the student's classification (e.g., First Class, Second Class, etc.).
+
+Steps:
+Define Variables and Datatypes:
+
+Use variables to store the student's name (String), age (int), and grades (float or double).
+Calculate the average grade using arithmetic operations.
+Input:
+
+Take input for the student's name, age, and grades in 3 subjects (e.g., Math, Science, English).
+Use Scanner class for input.
+Processing:
+
+Calculate the average grade.
+Determine the grade classification based on the average.
+Output:
+
+Display the student's name, age, grades, average grade, and classification.
