@@ -1,0 +1,52 @@
+1.Write a program to display a string in following format.
+
+  eg:
+Input
+Hi
+Welcome
+
+Output
+Hi and Welcome
+
+2.Write a Java program to get the integer values and print the same integer values.
+eg:
+input 28     output: 28  
+3.Write a java program to print the floating point value.
+input:5.374675 
+output:5.375,5037,5.4
+4.Write a Java program to print the character value
+input:d
+output:d
+5.Write a java program to convert the integer data type to float data type
+input:5
+output:5.0
+6.Write a Java program to find the conversion of integer value to character value
+input:101
+output:e
+7.Write a program to find the conversion of character to integer value
+input:s
+output:115
+8.Customized Welcome Message
+Nikhil, the founder of “Pine Tree” company wished to design an Event Management System that would let its Customers plan and host events seamlessly via an online platform.
+As a part of this requirement, Nikhil wanted to write a piece of code for his company’s Examly Event Management System that will display customized welcome messages by taking
+Customers’ name as input. Help Nikhil on the task
+input:Harry Potter
+output:Hello Harry Potter ! Welcome to Examly Event Management System
+9. Problem statement:
+Write a simple code by declaring three variables where two variables are of integer type and one variable in double. Add the two integer variables and store the result in the remaining
+variable(double).
+input:67 801
+output:868.0
+10.Display Different Data Types
+Write a java program to get different types of data from the user and display the values.
+Question Instructions:
+1. Create a driver class named Main
+2. The solution code should be written inside the main method() of the Main class
+
+input:
+First Line consists of an integer data
+Second line consists of double data
+Third Line consists of boolean value which is either true or false
+Fourth line consists of a single character
+Fifth line consists of a String input
+output:
