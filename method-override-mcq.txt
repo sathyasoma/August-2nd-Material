@@ -1,0 +1,218 @@
+1. What is the output of the following code?
+
+class Parent {
+    void display() {
+        System.out.println("Parent display()");
+    }
+}
+
+class Child extends Parent {
+    void display() {
+        System.out.println("Child display()");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Parent obj = new Child();
+        obj.display();
+    }
+}
+a) Parent display()
+b) Child display()
+c) Compilation error
+d) Runtime error
+
+
+2. Which of the following statements is true about method overriding in Java?
+a) Method overriding requires that the method in the subclass has the same name, return type, and parameter list as the method in the parent class.
+b) The overridden method in the subclass can have a different return type.
+c) Method overriding allows you to change the method's name and return type in the subclass.
+d) Overriding methods cannot throw exceptions.
+
+
+3. What will be the output of the following code?
+
+class A {
+    void show() {
+        System.out.println("A's show()");
+    }
+}
+
+class B extends A {
+    void show() {
+        System.out.println("B's show()");
+    }
+    
+    void callShow() {
+        show();
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        B obj = new B();
+        obj.callShow();
+    }
+}
+a) A's show()
+b) B's show()
+c) Compilation error
+d) Runtime error
+
+
+4. Can a final method be overridden in Java?
+a) Yes
+b) No
+c) Only in an abstract class
+d) Only if it is static
+
+
+5. What is the output of the following code?
+
+class Base {
+    void print() {
+        System.out.println("Base print()");
+    }
+}
+
+class Derived extends Base {
+    void print() {
+        System.out.println("Derived print()");
+    }
+    
+    void display() {
+        print();
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Base obj = new Derived();
+        obj.print();
+    }
+}
+a) Base print()
+b) Derived print()
+c) Compilation error
+d) Runtime error
+
+
+6. What will be the output of the following code?
+
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Animal a = new Dog();
+        a.sound();
+    }
+}
+a) Animal makes a sound
+b) Dog barks
+c) Compilation error
+d) Runtime error
+
+
+
+7. Which of the following statements is true about method overriding and polymorphism?
+a) Method overriding allows a subclass to provide a specific implementation of a method that is already defined in its superclass, and polymorphism allows the subclass method to be called through a superclass reference.
+b) Method overriding and polymorphism are unrelated concepts in Java.
+c) Method overriding requires the use of the static keyword.
+d) Polymorphism allows a superclass to override a method in a subclass.
+
+
+8. What will be the output of the following code?
+
+class Parent {
+    void greet() {
+        System.out.println("Hello from Parent");
+    }
+}
+
+class Child extends Parent {
+    void greet() {
+        System.out.println("Hello from Child");
+    }
+
+    void callGreet() {
+        greet();
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Parent p = new Child();
+        p.greet();
+    }
+}
+a) Hello from Parent
+b) Hello from Child
+c) Compilation error
+d) Runtime error
+
+
+9. Consider the following code snippet:
+
+class Base {
+    void show() {
+        System.out.println("Base show()");
+    }
+}
+
+class Derived extends Base {
+    void show() {
+        System.out.println("Derived show()");
+    }
+
+    void callShow() {
+        super.show();
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Derived d = new Derived();
+        d.callShow();
+    }
+}
+a) Base show()
+b) Derived show()
+c) Compilation error
+d) Runtime error
+
+
+10. What will be the output of the following code?
+
+class Animal {
+    void makeSound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Cat extends Animal {
+    void makeSound() {
+        System.out.println("Meow");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Animal a = new Cat();
+        a.makeSound();
+    }
+}
+a) Animal sound
+b) Meow
+c) Compilation error
+d) Runtime error

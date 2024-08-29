@@ -1,0 +1,168 @@
+1. What is encapsulation in Java?
+a) Encapsulation is the mechanism of hiding the internal state of an object and requiring all interaction to be performed through an object's methods.
+b) Encapsulation is the ability of an object to take on many forms.
+c) Encapsulation is the process of defining a method that can be accessed by other classes.
+d) Encapsulation refers to the process of creating multiple methods with the same name but different parameters.
+
+
+2. What will be the output of the following code?
+
+class Person {
+    private String name;
+    
+    public String getName() {
+        return name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Person p = new Person();
+        p.setName("Alice");
+        System.out.println(p.getName());
+    }
+}
+a) Alice
+b) null
+c) Compilation error
+d) Runtime error
+
+
+3. Which of the following statements correctly demonstrates encapsulation?
+a) Making fields public and methods private.
+b) Making fields private and providing public getter and setter methods.
+c) Making all methods public and fields protected.
+d) Making methods private and fields protected.
+
+
+4. What will be the output of the following code?
+
+class Employee {
+    private double salary;
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        if (salary > 0) {
+            this.salary = salary;
+        }
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Employee e = new Employee();
+        e.setSalary(5000);
+        System.out.println(e.getSalary());
+        e.setSalary(-1000);
+        System.out.println(e.getSalary());
+    }
+}
+a) 5000
+5000
+b) 5000
+0
+c) 5000
+-1000
+d) Compilation error
+
+
+5. Which of the following is a benefit of encapsulation?
+a) It increases the complexity of the code.
+b) It allows the internal implementation of a class to be changed without affecting other classes.
+c) It requires the use of multiple inheritance.
+d) It prevents the use of inheritance.
+
+
+6. What will be the output of the following code?
+
+class Student {
+    private int age;
+
+    public void setAge(int age) {
+        if (age >= 0) {
+            this.age = age;
+        }
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.setAge(21);
+        System.out.println(s.getAge());
+    }
+}
+a) 21
+b) 0
+c) Compilation error
+d) Runtime error
+
+
+
+7. What is the purpose of the private access modifier in encapsulation?
+a) To make the fields accessible by all other classes.
+b) To allow the fields to be modified directly by any class.
+c) To restrict access to the fields and methods to the class in which they are defined.
+d) To make the fields visible to subclasses.
+
+
+8. Which of the following is not a feature of encapsulation?
+a) Data hiding
+b) Controlled access
+c) Multiple inheritance
+d) Class-level access control
+
+
+9. What will be the output of the following code?
+
+class BankAccount {
+    private double balance;
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount();
+        account.deposit(1000);
+        System.out.println(account.getBalance());
+        account.deposit(-500);  // This deposit should not be added
+        System.out.println(account.getBalance());
+    }
+}
+a) 1000
+1000
+b) 1000
+500
+c) 0
+1000
+d) Compilation error
+
+
+10. Which of the following methods is used to provide controlled access to private fields of a class?
+a) Constructor
+b) Getter and Setter methods
+c) Direct field access
+d) Public methods
+
+
+

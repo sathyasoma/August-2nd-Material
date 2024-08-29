@@ -1,0 +1,169 @@
+1. What will be the output of the following code?
+
+class A {
+    int i = 10;
+}
+
+class B extends A {
+    int i = 20;
+    
+    void display() {
+        System.out.println(i);
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        B obj = new B();
+        obj.display();
+    }
+}
+a) 10
+b) 20
+c) Compilation error
+d) Runtime error
+
+
+2. What happens if a class does not explicitly define a constructor and is then extended by a subclass that also does not define a constructor?
+a) Compilation error
+b) The subclass will call a non-existent constructor
+c) The subclass will inherit the parent’s constructor
+d) Java will automatically provide a default constructor to both classes
+
+
+3. What is the output of the following code?
+
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Animal a = new Dog();
+        a.sound();
+    }
+}
+a) Animal makes a sound
+b) Dog barks
+c) Compilation error
+d) Runtime error
+
+
+4. Which of the following statements is true about multiple inheritance in Java?
+a) Java supports multiple inheritance using classes.
+b) Java does not support multiple inheritance.
+c) Java supports multiple inheritance using interfaces.
+d) Java supports multiple inheritance using both classes and interfaces.
+
+
+5. What will be the output of the following code?
+
+class Parent {
+    Parent() {
+        System.out.println("Parent Constructor");
+    }
+}
+
+class Child extends Parent {
+    Child() {
+        System.out.println("Child Constructor");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        new Child();
+    }
+}
+a) Parent Constructor
+Child Constructor
+b) Child Constructor
+Parent Constructor
+c) Compilation error
+d) Runtime error
+
+6. What will be the output of the following code?
+
+class A {
+    int x = 10;
+}
+
+class B extends A {
+    int x = 20;
+
+    void show() {
+        System.out.println(super.x);
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        B obj = new B();
+        obj.show();
+    }
+}
+a) 10
+b) 20
+c) Compilation error
+d) Runtime error
+
+
+7. Which of the following statements is correct regarding method overriding in Java?
+a) The overridden method must have a different return type than the method it overrides.
+b) The overridden method must have the same access modifier as the method it overrides.
+c) The overridden method must have the same parameter list as the method it overrides.
+d) The overridden method must be declared as final.
+
+
+8. What is the output of the following code?
+
+class X {
+    void show() {
+        System.out.println("X's show()");
+    }
+}
+
+class Y extends X {
+    void show() {
+        System.out.println("Y's show()");
+    }
+}
+
+class Z extends Y {
+    void show() {
+        System.out.println("Z's show()");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        X obj = new Z();
+        obj.show();
+    }
+}
+a) X's show()
+b) Y's show()
+c) Z's show()
+d) Compilation error
+
+
+9. What happens if a superclass method is declared as final and a subclass tries to override it?
+a) The subclass will successfully override the method.
+b) The subclass will throw a compilation error.
+c) The subclass will throw a runtime error.
+d) The method will be overridden only if the subclass is also declared final.
+
+
+10. Which keyword is used in Java to inherit a class?
+a) implement
+b) extends
+c) inherits
+d) super

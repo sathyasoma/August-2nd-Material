@@ -1,0 +1,154 @@
+1. What is the purpose of using an abstract class in Java?
+a) To provide a base for subclasses to extend and implement abstract methods.
+b) To prevent the class from being instantiated and to provide a blueprint for subclasses.
+c) To allow multiple inheritance in Java.
+d) To implement all methods of the class.
+
+
+2. What will be the output of the following code?
+
+abstract class Shape {
+    abstract void draw();
+}
+
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing a Circle");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Shape s = new Circle();
+        s.draw();
+    }
+}
+a) Drawing a Circle
+b) Compilation error
+c) Runtime error
+d) No output
+
+
+3. Which of the following statements is true about abstract methods in Java?
+a) An abstract method must have a body.
+b) An abstract method cannot be defined in a concrete class.
+c) An abstract method must be implemented by the subclasses of the abstract class.
+d) An abstract method can be private.
+
+
+4. Can an abstract class have non-abstract methods?
+a) Yes
+b) No
+c) Only if the non-abstract methods are static
+d) Only if the non-abstract methods are private
+
+
+5. What will be the output of the following code?
+
+abstract class Animal {
+    abstract void sound();
+    void sleep() {
+        System.out.println("Sleeping...");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Bark");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Animal a = new Dog();
+        a.sound();
+        a.sleep();
+    }
+}
+a) Bark
+Sleeping...
+b) Sleeping...
+Bark
+c) Compilation error
+d) No output
+
+
+6. Which of the following is true about an abstract class in Java?
+a) An abstract class can be instantiated if it has at least one abstract method.
+b) An abstract class can be instantiated if all its methods are implemented.
+c) An abstract class can have constructors, fields, and methods.
+d) An abstract class cannot have constructors.
+
+
+7. Can an interface in Java have methods with a body?
+a) Yes, but only if they are declared as abstract.
+b) No, all methods in an interface must be abstract.
+c) Yes, but only if they are declared as default or static.
+d) Yes, but only if they are declared as private.
+
+
+8. What will be the output of the following code?
+
+interface Drawable {
+    void draw();
+    default void color() {
+        System.out.println("Coloring");
+    }
+}
+
+class Circle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing Circle");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Drawable d = new Circle();
+        d.draw();
+        d.color();
+    }
+}
+a) Drawing Circle
+Coloring
+b) Coloring
+Drawing Circle
+c) Compilation error
+d) No output
+
+
+9. What will be the output of the following code?
+
+abstract class Vehicle {
+    abstract void start();
+    void stop() {
+        System.out.println("Vehicle stopped");
+    }
+}
+
+class Car extends Vehicle {
+    void start() {
+        System.out.println("Car started");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Vehicle v = new Car();
+        v.start();
+        v.stop();
+    }
+}
+a) Car started
+Vehicle stopped
+b) Vehicle stopped
+Car started
+c) Compilation error
+d) No output
+
+
+10. Which of the following statements about abstract classes and interfaces is true?
+a) Abstract classes can have instance variables and methods with a body, while interfaces can only have abstract methods.
+b) Abstract classes cannot have constructors, but interfaces can have constructors.
+c) Interfaces can have instance variables, but abstract classes cannot.
+d) Both abstract classes and interfaces can have abstract methods, but abstract classes can also have methods with implementations.

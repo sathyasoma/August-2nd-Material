@@ -1,0 +1,220 @@
+1. Which of the following statements is true about method overloading in Java?
+a) Method overloading allows a class to have multiple methods with the same name but different parameter lists.
+b) Method overloading is only possible with different return types.
+c) Method overloading requires methods to have the same parameter list.
+d) Method overloading is not supported in Java.
+
+
+
+2. What will be the output of the following code?
+
+class Test {
+    void print(int a) {
+        System.out.println("int: " + a);
+    }
+
+    void print(double a) {
+        System.out.println("double: " + a);
+    }
+
+    public static void main(String[] args) {
+        Test obj = new Test();
+        obj.print(5);
+        obj.print(5.5);
+    }
+}
+a) int: 5
+double: 5.5
+b) int: 5
+int: 5
+c) double: 5.0
+double: 5.5
+d) Compilation error
+
+
+3. Can method overloading be done by changing only the return type of the method in Java?
+a) Yes
+b) No
+c) Only if the method is static
+d) Only if the method is final
+
+
+4. Which of the following code snippets demonstrates valid method overloading?
+a)
+
+void add(int a, int b) { }
+void add(int a, int b) { }
+b)
+
+int add(int a, int b) { return a + b; }
+double add(int a, int b) { return a + b; }
+c)
+
+void add(int a, int b) { }
+void add(int a, double b) { }
+d)
+
+void add(int a, int b) { }
+double add(double a, int b) { }
+
+5. What will be the output of the following code?
+
+class OverloadTest {
+    void test(int a, double b) {
+        System.out.println("int and double");
+    }
+
+    void test(double a, int b) {
+        System.out.println("double and int");
+    }
+
+    public static void main(String[] args) {
+        OverloadTest obj = new OverloadTest();
+        obj.test(5, 6.0);
+        obj.test(5.0, 6);
+    }
+}
+a) int and double
+double and int
+b) double and int
+int and double
+c) int and double
+int and double
+d) Compilation error
+
+
+6. Which of the following statements is true regarding method overloading in Java?
+a) Method overloading can occur in the same class or in a subclass.
+b) Method overloading is strictly limited to methods within the same class.
+c) Method overloading can only occur with static methods.
+d) Method overloading requires the use of the final keyword.
+
+
+7. What will be the output of the following code?
+
+class A {
+    void show(int a) {
+        System.out.println("A's show()");
+    }
+}
+
+class B extends A {
+    void show(String s) {
+        System.out.println("B's show()");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        B obj = new B();
+        obj.show(5);
+        obj.show("Hello");
+    }
+}
+a) A's show()
+B's show()
+b) B's show()
+A's show()
+c) Compilation error
+d) Runtime error
+
+
+8. What is the output of the following code?
+
+class Test {
+    void display(int a, double b) {
+        System.out.println("int and double");
+    }
+
+    void display(double a, int b) {
+        System.out.println("double and int");
+    }
+
+    public static void main(String[] args) {
+        Test obj = new Test();
+        obj.display(10, 20.5);
+        obj.display(15.5, 30);
+    }
+}
+a) int and double
+double and int
+b) double and int
+int and double
+c) int and double
+int and double
+d) Compilation error
+
+9. Consider the following code snippet:
+
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+
+    double add(int a, double b) {
+        return a + b;
+    }
+
+    double add(double a, int b) {
+        return a + b;
+    }
+    
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println(calc.add(5, 6));
+        System.out.println(calc.add(5.0, 6.0));
+        System.out.println(calc.add(5, 6.0));
+        System.out.println(calc.add(5.0, 6));
+    }
+}
+a) 11
+11.0
+11.0
+11.0
+b) 11
+11.0
+11.0
+11.0
+c) 11
+11.0
+11.0
+11.0
+d) Compilation error
+
+
+10. What is the output of the following code?
+
+class OverloadDemo {
+    void show(int a) {
+        System.out.println("Integer: " + a);
+    }
+
+    void show(double a) {
+        System.out.println("Double: " + a);
+    }
+
+    void show(String a) {
+        System.out.println("String: " + a);
+    }
+
+    public static void main(String[] args) {
+        OverloadDemo demo = new OverloadDemo();
+        demo.show("Hello");
+        demo.show(123);
+        demo.show(45.67);
+    }
+}
+a) String: Hello
+Integer: 123
+Double: 45.67
+b) Integer: 123
+Double: 45.67
+String: Hello
+c) Double: 45.67
+Integer: 123
+String: Hello
+d) Compilation error
