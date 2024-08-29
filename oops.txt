@@ -1,0 +1,13 @@
+1.In a company, there are different types of employees such as PermanentEmployee and ContractEmployee. Both types of employees
+  share common attributes like name, employeeId, and department, but they also have specific attributes like salary for permanent 
+ employees and hourlyRate for contract employees.
+2.In a vehicle rental system, there are different types of vehicles such as Car and Truck. Both vehicles share common attributes 
+like make, model, and year, but they also have specific attributes like numberOfDoors for cars and payloadCapacity for trucks.
+3. In a school management system, different types of people are involved, such as Student and Teacher. Both share common attributeslike name, age, and address, but they also have specific attributes and behaviors like studentId and study for students, and teacherId 
+ and teach for teachers.
+4.In a banking system, different types of accounts exist such as SavingsAccount and CurrentAccount. Both types of accounts 
+share common attributes like accountNumber, accountHolder, and balance, but they also have specific behaviors like calculateInterest
+for savings accounts and applyOverdraft for current accounts.
+5.In an e-commerce system, different types of products are sold, such as Electronics and Clothing. Both types of products share 
+common attributes like productId, productName, and price, but they also have specific attributes like warrantyPeriod for electronics 
+and size for clothing.
