@@ -1,0 +1,46 @@
+1. Write a Java program to create a class called "Person" with a name and age attribute. 
+Create two instances of the "Person" class, set their attributes using the constructor, 
+and print their name and age.
+
+
+2. Write a Java program to create a class called "Dog" with a name and breed attribute.
+Create two instances of the "Dog" class, set their attributes using the constructor 
+and modify the attributes using the setter methods and print the updated values.
+
+3. Write a Java program to create a class called "Rectangle" with width and height 
+attributes. Calculate the area and perimeter of the rectangle.
+
+4. Write a Java program to create a class called "Employee" with a name, job title,
+and salary attributes, and methods to calculate and update salary.
+
+
+5. Write a Java program to create class called "TrafficLight" with attributes for color
+ and duration, and methods to change the color and check for red or green.
+
+6.Create an abstract class called Shape with an abstract method calculateArea(). 
+Then, create two subclasses, Circle and Rectangle, that extend the Shape class
+ and implement the calculateArea() method to calculate the area of a circle 
+ and a rectangle, respectively.
+
+7.Create an interface called Shape with two constant fields: PI and E. Implement this 
+interface in a class called Circle and use the constants to calculate
+ the circumference and area of a circle.
+
+8.Create a basic banking system with three classes:
+ Account, SavingsAccount, and CheckingAccount.
+
+Account Class:
+Properties: accountNumber, balance
+Methods: deposit(double amount), withdraw(double amount), and a constructor to set the account number and initial balance.
+
+SavingsAccount Class (subclass of Account):
+Additional Property: interestRate
+Method: addInterest(), which adds interest to the account balance based on the interest rate.
+
+CheckingAccount Class (subclass of Account):
+Additional Property: overdraftLimit
+Method: withdraw(double amount), which allows withdrawing funds up to the overdraft limit.
+
+Write a Main class to demonstrate the use of these classes by creating instances of both SavingsAccount and CheckingAccount.
+
+
