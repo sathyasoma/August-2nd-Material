@@ -1,0 +1,119 @@
+1.write a java program for creating a thread by extending Thread class.
+2.write a java program for creating a thread by implimenting Runnable interface.
+3.Write a java program for creating a thread class by using extending Thread class and get the name of the Thread.
+4.Write a java program for creating a thread class by using extending Thread class and get the Priority of the Thread.
+5.Create a Thread by extending Thread class apply Yield Method.
+6.Create a Thread by extending Thread class apply join Method.
+7.Create a Thread by extending Thread class apply sleep Method.
+8.Create a Account class with methods withdraw, deposit, enquiry, add with synchronized keywords observe the output.
+9.Implement wait, notify and notifyAll methods.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1.
+
+class Multi extends Thread{  
+public void run(){  
+System.out.println("thread is running...");  
+}  
+public static void main(String args[]){  
+Multi t1=new Multi();  
+t1.start();  
+ }  
+}  
+
+2.
+
+class Multi3 implements Runnable{  
+public void run(){  
+System.out.println("thread is running...");  
+}  
+  
+public static void main(String args[]){  
+Multi3 m1=new Multi3();  
+Thread t1 =new Thread(m1);   // Using the constructor Thread(Runnable r)  
+t1.start();  
+ }  
+} 
+
+
+3.
+
+
+public class MyThread1  
+{  
+// Main method  
+public static void main(String argvs[])  
+{  
+// creating an object of the Thread class using the constructor Thread(String name)   
+Thread t= new Thread("My first thread");  
+  
+// the start() method moves the thread to the active state  
+t.start();  
+// getting the thread name by invoking the getName() method  
+String str = t.getName();  
+System.out.println(str);  
+}  
+}
+
+4.
+
+// importing the java.lang package  
+import java.lang.*;  
+  
+public class ThreadPriorityExample1 extends Thread   
+{  
+  
+// Method 1  
+// Whenever the start() method is called by a thread  
+// the run() method is invoked  
+public void run()  
+{  
+// the print statement  
+System.out.println("Inside the run() method");  
+}  
+  
+  
+// the main method  
+public static void main(String argvs[])  
+{  
+  
+// Now, priority of the main thread is set to 7  
+Thread.currentThread().setPriority(7);  
+  
+// the current thread is retrieved  
+// using the currentThread() method  
+  
+// displaying the main thread priority  
+// using the getPriority() method of the Thread class  
+System.out.println("Priority of the main thread is : " + Thread.currentThread().getPriority());  
+  
+// creating a thread by creating an object of the class ThreadPriorityExample1  
+ThreadPriorityExample1 th1 = new ThreadPriorityExample1();  
+  
+// th1 thread is the child of the main thread  
+// therefore, the th1 thread also gets the priority 7  
+  
+// Displaying the priority of the current thread  
+System.out.println("Priority of the thread th1 is : " + th1.getPriority());  
+}  
+}  
+
+
+
