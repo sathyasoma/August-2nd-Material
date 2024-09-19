@@ -1,0 +1,19 @@
+Exercise 1: Basic Lambda Expressions
+Write a lambda expression that takes two integers as parameters and returns 
+their sum.
+
+Exercise 2: Filtering with Lambda Expressions
+Given a list of integers, use a lambda expression to filter out all the even 
+numbers.
+
+Exercise 3: Mapping with Lambda Expressions
+Given a list of integers, use a lambda expression to double each element in 
+the list.
+
+Exercise 4: Advanced Filtering and Mapping
+Given a list of persons with names and ages, use a lambda expression to filter 
+out all persons older than 30 and then extract their names into a new list.
+
+Exercise 5: Lambda Expressions with Custom Functional Interfaces
+Create a custom functional interface called MathOperation with a single
+ abstract method double operate(double a, double b) representing a mathematical operation. Implement lambda expressions for addition, subtraction, multiplication, and division using this interface.
