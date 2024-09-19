@@ -1,0 +1,102 @@
+Exercise 1: Basic Lambda Expressions
+Write a lambda expression that takes two integers as parameters and returns their sum.
+
+Solution:
+
+
+(int a, int b) -> a + b
+Write a lambda expression that takes a string as a parameter and returns its length.
+
+Solution:
+
+(String s) -> s.length()
+Exercise 2: Filtering with Lambda Expressions
+Given a list of integers, use a lambda expression to filter out all the even numbers.
+
+Solution:
+
+
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
+List<Integer> evenNumbers = numbers.stream()
+                                    .filter(n -> n % 2 == 0)
+                                    .collect(Collectors.toList());
+Given a list of strings, use a lambda expression to filter out all the strings that contain the letter "a" (case insensitive).
+
+Solution:
+
+
+List<String> strings = Arrays.asList("Apple", "Banana", "Cherry", "Date");
+List<String> containsA = strings.stream()
+                                .filter(s -> s.toLowerCase().contains("a"))
+                                .collect(Collectors.toList());
+Exercise 3: Mapping with Lambda Expressions
+Given a list of integers, use a lambda expression to double each element in the list.
+
+Solution:
+
+
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+List<Integer> doubledNumbers = numbers.stream()
+                                      .map(n -> n * 2)
+                                      .collect(Collectors.toList());
+Given a list of strings, use a lambda expression to convert each string to uppercase.
+
+Solution:
+
+List<String> strings = Arrays.asList("apple", "banana", "cherry");
+List<String> uppercaseStrings = strings.stream()
+                                      .map(s -> s.toUpperCase())
+                                      .collect(Collectors.toList());
+
+Exercise 4: Advanced Filtering and Mapping
+Given a list of persons with names and ages, use a lambda expression to filter out all persons older than 30 and then extract their names into a new list.
+
+Solution:
+
+
+List<Person> persons = Arrays.asList(
+    new Person("Alice", 25),
+    new Person("Bob", 35),
+    new Person("Charlie", 28),
+    new Person("David", 40)
+);
+
+List<String> namesOfPeopleOver30 = persons.stream()
+    .filter(person -> person.getAge() > 30)
+    .map(Person::getName)
+    .collect(Collectors.toList());
+Where Person is a simple class with name and age fields.
+
+Given a list of words, use a lambda expression to filter out words that start with the letter "S," convert them to uppercase, and collect them into a list.
+
+Solution:
+
+
+List<String> words = Arrays.asList("Apple", "Banana", "Strawberry", "Cherry", "Sunflower");
+
+List<String> filteredAndUppercaseWords = words.stream()
+    .filter(word -> word.startsWith("S"))
+    .map(String::toUpperCase)
+    .collect(Collectors.toList());
+Exercise 5: Lambda Expressions with Custom Functional Interfaces
+Create a custom functional interface called MathOperation with a single abstract method double operate(double a, double b) representing a mathematical operation. Implement lambda expressions for addition, subtraction, multiplication, and division using this interface.
+
+Solution:
+
+@FunctionalInterface
+interface MathOperation {
+    double operate(double a, double b);
+}
+
+MathOperation addition = (a, b) -> a + b;
+MathOperation subtraction = (a, b) -> a - b;
+MathOperation multiplication = (a, b) -> a * b;
+MathOperation division = (a, b) -> a / b;
+Write a method that takes two doubles and a MathOperation interface as parameters and uses the operation to perform the calculation on the doubles.
+
+Solution:
+
+
+public static double performOperation(double a, double b, MathOperation operation) {
+    return operation.operate(a, b);
+}
