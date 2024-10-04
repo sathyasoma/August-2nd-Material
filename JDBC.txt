@@ -1,0 +1,484 @@
+=>jdbc stands for(java database connectivity)
+=>jdbc is a API to connect and  execute query with the database.
+=>it is a part of jse(java standard edition)
+=>jdbc API uses jdbc to connect with database
+
+
+ 
+jdbc:
+``
+
+   java database connectivity.
+   
+ ->files (traditional appraoch)
+ ->database
+ 
+javaenvironment                              dbenvironment
+
+ convert 
+ 
+                (java calls) <---driver class---> db calls 
+
+
+
+what is jdbc?
+
+ jdbc is a technology/specification given by sunmicrosystem.
+ and implementations are given by different different database vendors
+ in the form of jar file .
+ 
+ 
+ 
+ oracle-> jar file (implementaion classes for jdbc specifications)
+ 
+       ojdbc6.jar
+	   
+	   C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib
+	   
+	   
+ mysql
+ 
+       
+ sybase
+ 
+ 
+ steps to write the jdbc program:
+ ````
+ 1.load the driver class 
+ 2.get the connection 
+ 3.we should create the object for Statement/PreparedStatemnt/CallableStatment
+   for writing the quereis
+   
+ 4.process the queries
+ 
+ 5.close the connection
+ 
+ 
+ note:
+ `
+ for everydatatbase, 
+   how many types of drivers are there
+     1.type1
+	 2.type2
+	 3.type3
+	 4.type4(highly recommended to use -> java)
+	 
+ 1.load the driver class:
+ ```
+   Class.forName("oracle.jdbc.driver.OracleDriver");
+
+2.get the connection:
+````
+   Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","capg","capg");
+ 
+ type4 driver oracle databse 
+ 
+ url: jdbc:oracle:thin:@localhost:1521:xe
+ 
+ jdbc: main protocol
+ oracle: sub protocol
+ thin: nick name of type4 driver oracle db
+ localhost: (java machine and db machine)->
+ 1521: default port number of oracle db
+ xe : service name of oracle database express edition
+ 
+ 
+ 
+ 
+ note:
+ ``
+ to get the service name:
+ `````
+  select * From global_name;
+  
+  xe
+  
+
+example:
+`````
+package com.capg.jse.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		try {
+
+			// 1-load the driver classname
+
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+
+			// 2-obtain the connection
+
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "capg", "capg");
+
+			// creatae the Statement obejct for writing the queries
+
+			Statement st = con.createStatement();
+
+			String query = "insert into student values(101,'chen')";
+
+			// process the query
+
+			int i = st.executeUpdate(query);
+
+			System.out.println(i + "row(s) inserted");
+
+			// close the connection
+
+			con.close();
+
+		}
+
+		catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}
+
+
+assignment:
+
+ do the same program w.r.to update and delete also.
+ 
+ 
+how to add ojdbc6.jar file to the project to escape from 
+java.lang.ClassNotFoundException
+
+right click on project
+|
+click on build path
+|
+click on libraries
+|
+add external jars
+|
+add ojdbc6.jar (from the installation folder location of oracle)
+
+click on apply and finish
+
+whatever we have implmeneted all those non-select queries.
+
+to process non-select quereis we have to invoke executeUpdate() on top
+of the Statement interface.
+
+
+    int i = st.executeUpdate("insert into student values(100,'ram')");
+	
+ 
+ how to process select queries
+ ````
+ 
+     st.executeQuery();
+ 
+ 
+how to process select queries?
+``````
+package com.capg.jse.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class Test2 {
+	
+	public static void main(String[] args) {
+		
+		try {
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","capg","capg");
+		
+		Statement st = con.createStatement();
+		
+		ResultSet rs = st.executeQuery("select * from student");	
+		
+		 while(rs.next())
+		 {
+			 System.out.println(rs.getInt(1) + " " + rs.getString(2));
+		 }
+		
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	
+	
+	}
+
+}
+
+
+how to get meta inforamtion of database object:
+```````
+package com.capg.jse.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+
+public class Test3 {
+	
+public static void main(String[] args) {
+		
+		try {
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","capg","capg");
+		
+		Statement st = con.createStatement();
+		
+		ResultSet rs = st.executeQuery("select * from student");
+		
+		ResultSetMetaData rsmd = rs.getMetaData();
+		
+		//System.out.println("no.of columns : " + rsmd.getColumnCount());
+		for(int i=1;i<=rsmd.getColumnCount();i++)
+		{
+			
+			System.out.println(rsmd.getColumnName(i) + " " + rsmd.getColumnTypeName(i) + " " + rsmd.getPrecision(i));
+		}
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+}
+}
+
+
+
+PreparedStatement:
+````
+in sql, queries are of two types
+ 
+   1.static queries
+   2.dynamic queries
+   
+   
+     insert into student values(100,'ram');-static queries
+	 insert into student values(?,?) ; --> dynamic queries
+	 
+to process static querirs --> we can create object for Statement
+to process dynamic queries --> we should create object for PreparedStatement
+
+    Statement st = con.createStatement()
+    PreparedStatement ps = con.prepareStatement(); 
+	 
+
+ 
+example on PreparedStatement:
+````
+package com.capg.jse.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+
+public class Test4 
+
+{
+public static void main(String[] args) {
+	
+
+
+	try {
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+	
+	Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","capg","capg");
+	
+	//create the object for PreparedStatement
+	
+	PreparedStatement ps = con.prepareStatement("insert into student values(?,?)");//? - positional parameters
+	
+	
+	System.out.println("enter student id");
+	Scanner s = new Scanner(System.in);
+	int stid = s.nextInt();
+	
+	System.out.println("enter student name");
+	String stname = s.next();
+	
+	//setting the dynamic values using setter methods of PreparedStatement
+	ps.setInt(1, stid);
+	ps.setString(2, stname);
+	
+	
+	
+	int x = ps.executeUpdate();
+	
+	System.out.println(x + "row(s) inserted");
+	
+	//closing the logic
+	
+	con.close();
+	
+	
+	
+	}
+	catch(Exception e)
+	{
+		System.out.println(e);
+	}
+}
+}
+
+
+Batch procecssing:
+```
+  insert
+  update
+  delete
+  
+  
+  in my jdbc --> 100 queries
+  
+  
+ to peform every operation java --> db
+ 
+ 200 calls
+
+ 
+ in between java to db , network flow / trafic will be increased
+ 
+ 
+ i will add all these queries to the batch and then 
+ 
+ i will send this batch to the db
+ 
+ so db engine will process the entire batch and then
+ returns back to java
+ 
+  --> only 2 calls (one is for sending anotehr one is for receiving)
+  
+  
+example:
+``
+package com.capg.jse.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class Test5 {
+	public static void main(String[] args) {
+		
+
+
+		try {
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","capg","capg");
+		
+		
+		Statement st = con.createStatement();
+		
+		
+	    String q1 = "insert into student values(106,'lti')";
+	    String q2 = "update student set stname='capg' where stid=105";
+	    String q3 = "delete from student where stid=101";
+	    
+	    //adding quereis to the batch
+	      st.addBatch(q1);
+	      st.addBatch(q2);
+	      st.addBatch(q3);
+	     
+	    //process the batch
+	  
+	     int x[] =  st.executeBatch();
+	     
+	     System.out.println(x[0] + "row(s) inserted");
+	     System.out.println(x[1] + "row(s) updated");
+	     System.out.println(x[2] + "row(s) deleted");
+	     
+	     
+	     //closing the connection
+	     
+	     con.close();
+	      
+	    
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	
+
+}}
+
+
+
+note:
+
+using batch processing we are only allowed to add non-select queries since 
+the return type is integer array, we can not add select quereis to the batch
+
+
+
+assignment:
+````
+write a jdbc program for inserting the image file into the db and 
+as well as fetch the image from the db?
+
+transaction management:
+`````
+transaction:
+
+ 
+     do everything or do nothing
+ 
+ 
+example:
+`````
+package com.capg.jse.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class Test6 {
+
+	public static void main(String[] args) {
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "cts", "cts");
+
+			
+			con.setAutoCommit(false);
+			
+			Statement st = con.createStatement();
+
+			int x = st.executeUpdate("update account1 set bal=bal-10000 where accno=1000");
+
+			int y = st.executeUpdate("update account1 set bal=bal+10000 where accno=2000");
+
+			if (x > 0 && y > 0) {
+				con.commit();
+				System.out.println("funds transferred successfully");
+			} else {
+				con.rollback();
+				System.out.println("please check your account number");
+			}
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}
+
+git repository
+maven
+jenkins
+sonar
