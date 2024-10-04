@@ -1,0 +1,51 @@
+
+
+task1:
+-----------
+
+
+create Department Entity:
+------------------------
+  deparmentid
+  departmentname
+  deplocation
+  
+
+
+
+1. select only one department location from the departments.
+2. select all data of department
+3. insert data 
+4.update data
+5.delete data 
+6.select department location which is haveing letter "S"
+
+
+
+task2:
+-----------
+
+
+Manager Entity:
+-----------------
+
+
+managerId
+managername;
+manager age;
+managersalary
+managerlocaltion
+
+
+1.select all the from the table 
+2.update the manager age based on the Id
+3.delete manager id based on the salary 
+4.select manager whos having age in between 20 ro 45;
+5.select manager age where age In(41,42,43)
+6.select manager names which are letter   "K"
+7.select count of manager (how many members)
+8.select max age of manager
+9.select max salary of manager
+10.select min age of manager
+11.select managers list desending order by using age;
+

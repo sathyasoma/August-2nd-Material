@@ -1,0 +1,134 @@
+
+=============================JPA======================
+JPA stands for Jakarta Persistence API (JPA), formerly known as Java Persistence API.
+
+=>JPA is just a specification that facilitates object-relational mapping to manage relational data in Java applications.
+=>It provides a platform to work directly with objects instead of using SQL statements.
+
+
+=>JPA is a specification and several implementations are available. 
+       *Popular implementations are 
+	        Hibernate, EclipseLink, and Apache OpenJPA.
+
+What is ORM:
+============
+
+=>ORM-->Object Relational mapping 
+=>Object-relational mapping or ORM is the programming technique to map application
+     domain model objects to the relational database tables.
+
+eg:
+--
+                   Hibernate ORM Mapping
+      java class<<==========================>>DataBase Table
+	  
+
+What is JPA:
+------------
+=>JPA is just a specification that facilitates object-relational mapping to manage relational data in Java applications. 
+=>JPA defines only specifications, it does not provide an implementation.
+=>JPA permits the developer to work directly with objects rather than with SQL statements.
+=>The JPA implementation is typically called persistence provider.
+
+
+JPA Providers
+-------------
+=>JPA is an open-source API, therefore various enterprise vendors such as 
+          Oracle, Redhat, Eclipse, etc.
+ 
+ eg:   Hibernate, EclipseLink, TopLink, MyBatis, etc.
+ 
+
+=>Hibernate is the most popular ORM framework and implementation of JPA. 
+
+Advantages jpa:
+-----------------
+=>no need to create SQL statements if we use JPA. 
+            We directly persist an object into the database.
+=>The burden of interacting with the database 
+            reduces significantly by using JPA
+=>The user programming becomes easy by concealing
+            the O/R mapping and database access processing
+=>The cost of creating the definition file is reduced 
+            by using annotations
+=>We can merge the applications used with other JPA providers
+=>Using different implementations can add the features to the 
+            standard Implementation which can later be the part of JPA specification
+
+
+JPA Entity class:
+-------------------
+=>An entity is a lightweight persistence domain object.
+=>an entity represents a table in a relational database, and each entity instance
+     corresponds to a row in that table.
+=>A JPA entity class is a POJO (Plain Old Java Object) class, 
+i.e. an ordinary Java class that is marked (annotated) as having the ability to 
+     represent objects in the database.
+
+
+eg:
+---
+
+
+@Entity
+public class Product {
+    // Persistent Fields:
+    private int id;
+    private int name;
+
+    // Constructor:
+    Point (int id, int name) {
+        this.id = x;
+        this.name = y;
+    }
+
+    // Accessor Methods:
+    public int getId() { return this.id; }
+    public int getName() { return this.name; }
+
+    // String Representation:
+    @Override
+    public String toString() {
+        return String.format("(%d, %d)", this.id, this.name);
+    }
+}
+
+
+*class must be annotated with the jakarta.persistence.Entity annotation.
+*The class must have a public or protected, no-argument constructor. 
+     The class may have other constructors.
+*The class must not be declared final
+     No methods or persistent instance variables must be declared final.
+*Persistent instance variables must be declared private, protected, or 
+package-private and can be accessed directly only by the entity class's methods. 
+*By default, each field is mapped to a column with the name of the field. 
+        You can change the default name via @Column (name="newColumnName").
+
+
+@Id - Identifies the unique ID of the database entry
+@GeneratedValue - Together with an ID this annotation defines that this value is generated automatically.
+@Transient - Field will not be saved in a database
+
+Ex:
+==============
+
+
+@Entity
+@Table(name = "student")
+public class Student {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "first_name")
+    private String firstName;
+    
+    @Transient // Field will not be saved in a database
+    private String lastName;
+    // getter and setter methods
+}
+
+=>Every JPA entity must have a primary key. 
+       An entity may have either a simple or a composite primary key.

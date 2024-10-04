@@ -1,0 +1,309 @@
+
+layerd architecture process:
+----------------------------
+from the client will call service method(EmployeeService service= new EmployeeServiceImpl();)->
+
+from service method will call dao method(EmployeeDao dao= new EmployeeDaoImpl())->
+from dao will call database entity manager methods(entityManager )
+
+eed of hibernate:
+===================
+Hibernate is used to overcome the limitations of JDBC like:
+       
+	 * JDBC code is dependent on the database software being used i.e our persistence logic dependent
+becase of using jdbc.
+     *Here we are inserting a record into Employee table but our quey is database software dependent,
+i.e here we are using MySql. but if we change our database then thisquery wont work.
+
+     * if working with jdbc,changing of database suddenly is costly.
+	 * jdbc code is not portable across the multiple database software.
+	 * In jdbc Exception handling is mandetory.
+	 * while working with jdbc, there is no support for object level relationship.
+	 * In jdbc there occurs a boilerplate code problem, for every project we have to write that 
+code, bcz of that code length is increasing.
+     
+	 *To overcome those problems we are using "ORM" tool ,i.e nothing but HIbernate Framework.
+	      By using hibernate we can avoid above all problems and we can enjoy some other additional
+set of functionalities.
+
+
+About Hibernate:
+=================
+   Hibernate is a framework that provides "abstraction layer", 
+     internally it provide implementation for 
+	         Establishing connection with the database 
+			            writing the query to perform for CRUD operations
+			 
+persistence logic: To store and process the data for long use.
+==================
+
+Hibernate is opensource,non-invasive,light weight java ORM(Object relational Mapping ) framework 
+to develop objects which are independentof the database software and make independent logic in 
+all JAVA,JEE.
+
+Functionalities supported by Hibernate;
+======================================
+=>hibernate framework support for "AUTO DDL" operations.
+            in jdbc we have to write the query ,crete and declare table in jdbc
+                But hibernate can do all opertaions internally table creationa and alter and drop table.
+
+=>Hibernate can support for"AUTO Primary Key" generation
+       But IN Jdbc we have to write the key
+=>Hibernate framework is "database independent" it support "HQL"(hibernate query langauge) not 
+specific to any database.
+      But Jdbc is dependent database.
+=>In hibernate is exception handling is not mandetory
+      BUt In jdbc is mandetory
+=>Hibernate is "ORM" tool means it support object relational mapping.
+    But jdbc not dealing with objects, it delaing with values which are primitive 
+=>In hibernate each record represented as object
+      But in jdbc each record represent with values(primitive data)
+=>Hibernate support "Cache memory".
+     But jdbc not support.				  
+
+
+Hibernate:
+============
+hibernate is framework it is used to develope persistence logic which is independent on database 
+software.
+Hibernate framework:
+````
+hibernate is a java framework that simplifies the development of 
+java application to interact with the database.
+
+
+It is an open source, lightweight,orm(object relational mapping) tool.
+
+
+jdbc (specifications) -> different database vendors
+
+jpa(java persistence api) -specification -> sunmicrosystem(orm specification)
+
+ ->Hibernate implements the specifications of JPA(java persistence api)
+   for data persistence.
+   
+   
+   
+orm tool:
+``
+it simplifies the data creation,
+data manipulation
+
+& data access.
+
+->it is  a programming technique that maps the object
+to the data stored in the database.
+
+
+note:
+The orm tool internally uses the jdbc api to interact with the database.
+
+what is jpa:
+``
+java persistnace api is a java specification that provides certain
+funcationality and standard to orm tools.
+
+javax.persistence package contains the jpa classes and interfaces.
+
+
+advantages of hibernate framework:
+
+ 1.open source and lightweight
+ 2.fast performance(cache)
+ 3.database independent query(hql)-hibernate query language
+ 4.automatic table creation
+ 5.simplifies complex join
+ 6.provides query statistics and database status.
+ 
+ 
+JPA:
+====
+JAVA PERSISTANCE API
+jpa is a framework
+jpa is a specification
+jpa internally uses jdbc
+java application to jdbc
+
+
+disadv of jdbc:
+===========
+alwys concentrate on querys
+every java file has only one database
+we need to learn all querys
+we are close connnection manually
+we have to handle all checked execptions
+
+
+
+
+
+jpa is extension of jdbc
+
+hibernate,toplink, eclipslink............
+
+ORM tool implementation
+jpa  specification with hibernate  implemnetaion 
+
+
+hibernate is ORM tool,
+
+ORM (OBJECT RELATIONAL MAPPING)
+ the communication b/wn java aplication to databse in the form of "objects".
+    it is going to map with database in the form of objects.
+
+JPA example:
+-------------
+
+1.Entity class /model class
+    the class which is like a table(becomming as table)=the class which is database table
+	
+	
+2.Test/client
+       main method class(we execute here)
+	   
+3.configuration class
+       jpa need to connect with database
+	                  we have to provide database info in the configuration file
+							   configuration file is called "persistnace.xml"
+                                                                    (xtensioble  markup language)
+
+
+
+       like   @ override, @fuctinalInterface like....alredy use annotaions.
+we are going to use annotations
+@Entity, @Id, @column
+
+@Entity, @Id these two are mandetory remaing all optional;
+
+
+*by using @Entity annotation above the class we can create table, that table name
+is as class name in java file
+*@Id primery key added to the id column
+
+
+* if you want change coulmn name add @column annotaion add new name to the coulmn
+      
+	  @column (name="eid")
+   private int empId
+
+@column (name="ename,length=15")
+   private int empName
+
+*we can generate id's automatically by using "@GenerateValue"
+       starts with 1 ,increment with 1
+	   
+
+we have 4 entity methods:
+=======================
+persist()----->save(inserting)
+
+merge()-------->updating
+
+remove()----------->deleting
+
+find()--------->fetch data
+
+
+Queries with Other Conditional Expressions
+Every WHERE clause must specify a conditional expression, of which there are several kinds. 
+
+The LIKE Expression:
+------------------------
+SELECT p
+ FROM Player p
+ WHERE p.name LIKE ’Mich%’
+Data retrieved: All players whose names begin with “Mich.”
+
+Description: The LIKE expression uses wildcard characters to search for strings that match the wildcard pattern. In this case, the query uses the LIKE expression and the % wildcard to find all players whose names begin with the string “Mich.” For example, “Michael” and “Michelle” both match the wildcard pattern.
+
+
+
+The IS NULL Expression:
+-------------------------
+SELECT t
+ FROM Team t
+ WHERE t.league IS NULL
+Data retrieved: All teams not associated with a league.
+
+Description: The IS NULL expression can be used to check whether a relationship has been set between two entities. In this case, the query checks whether the teams are associated with any leagues and returns the teams that do not have a league.
+
+
+The IS EMPTY Expression:
+--------------------------
+SELECT p
+FROM Player p
+WHERE p.teams IS EMPTY
+Data retrieved: All players who do not belong to a team.
+
+Description: The teams relationship field of the Player entity is a collection. If a player does not belong to a team, the teams collection is empty, and the conditional expression is TRUE.
+
+
+The BETWEEN Expression:
+------------------------
+SELECT DISTINCT p
+FROM Player p
+WHERE p.salary BETWEEN :lowerSalary AND :higherSalary
+Data retrieved: The players whose salaries fall within the range of the specified salaries.
+
+Description: This BETWEEN expression has three arithmetic expressions: a persistent field (p.salary) and the two input parameters (:lowerSalary and :higherSalary). The following expression is equivalent to the BETWEEN expression:
+
+p.salary >= :lowerSalary AND p.salary <= :higherSalary
+
+
+Comparison Operators:
+=========================
+SELECT DISTINCT p1
+FROM Player p1, Player p2
+WHERE p1.salary > p2.salary AND p2.name = :name
+Data retrieved: All players whose salaries are higher than the salary of the player with the specified name.
+
+Description: The FROM clause declares two identification variables (p1 and p2) of the same type (Player). Two identification variables are needed because the WHERE clause compares the salary of one player (p2) with that of the other players (p1).
+
+
+
+Bulk Updates and Deletes:
+=======================
+The following examples show how to use the UPDATE and DELETE expressions in queries. UPDATE and DELETE operate on multiple entities according to the condition or conditions set in the WHERE clause. The WHERE clause in UPDATE and DELETE queries follows the same rules as SELECT queries.
+
+Update Queries:
+------------------
+UPDATE Player p
+SET p.status = 'inactive'
+WHERE p.lastPlayed < :inactiveThresholdDate
+Description: This query sets the status of a set of players to inactive if the player’s last game was longer than the date specified in inactiveThresholdDate.
+
+Delete Queries::;
+-------------------
+DELETE
+FROM Player p
+WHERE p.status = 'inactive'
+AND p.teams IS EMPTY
+Description: This query deletes all inactive players who are not on a team.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
